@@ -1,0 +1,66 @@
+{
+  "name": "grommet-theme-nineties",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/es6/index.js",
+  "jsnext:main": "dist/es6/index.js",
+  "sideEffects": false,
+  "description": "1990s theme for grommet",
+  "authors": [
+    "Chris Carlozzi",
+    "Eric Soderberg"
+  ],
+  "bugs": "https://github.com/grommet/grommet-theme-nineties/issues",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grommet/grommet-theme-nineties.git"
+  },
+  "peerDependencies": {
+    "react": ">= 16.6.1",
+    "styled-components": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@storybook/addon-options": "^4.0.0",
+    "@storybook/addon-storysource": "^4.0.0",
+    "@storybook/addons": "^4.0.0",
+    "@storybook/react": "^4.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.0-beta.6",
+    "babel-plugin-styled-components": "^1.6.4",
+    "babel-plugin-transform-imports": "^1.5.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "grommet": "^2.0.0",
+    "pre-commit": "^1.2.2",
+    "react": "^16.5.2",
+    "react-dom": ">= 16.6.1",
+    "styled-components": "^4.0.0"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "cross-env babel ./src/js/ --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --copy-files",
+    "lint": "eslint src",
+    "storybook": "NODE_ENV=development start-storybook -p 9001 -c storybook"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
