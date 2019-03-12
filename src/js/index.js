@@ -41,6 +41,7 @@ export const nineties = deepFreeze({
       'light-2': '#AAADAE',
     },
     control: {
+      background: '#ADADAD',
       border: {
         width: '4px',
         radius: '0',
@@ -72,16 +73,6 @@ export const nineties = deepFreeze({
     check: {
       radius: '0',
     },
-    icon: {
-      extend: css`
-        box-sizing: border-box;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: ${props => props.theme.checkBox.size};
-        height: ${props => props.theme.checkBox.size};
-      `,
-    },
     toggle: {
       radius: '0',
     },
@@ -95,6 +86,24 @@ export const nineties = deepFreeze({
   radioButton: {
     check: {
       radius: '0',
+    },
+  },
+  rangeInput: {
+    thumb: {
+      extend: css`
+        border-radius: 0;
+        margin-top: 0;
+      `,
+    },
+    track: {
+      height: '24px',
+      extend: css`
+      `,
+    },
+  },
+  rangeSelector: {
+    edge: {
+      type: 'bar',
     },
   },
   select: {

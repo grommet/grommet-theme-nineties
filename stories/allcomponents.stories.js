@@ -57,17 +57,17 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 
 class Components extends Component {
   state = {
-    baseSize: 24,
     checkBox: true,
     radioButton: true,
+    rangeInput: 24,
     rangeSelector: [1, 2],
   };
 
   render() {
     const {
-      baseSize,
       checkBox,
       radioButton,
+      rangeInput,
       rangeSelector,
       tabIndex,
     } = this.state;
@@ -113,7 +113,10 @@ class Components extends Component {
         />
         <TextInput placeholder="TextInput" />
         <TextArea placeholder="TextArea" />
-        <RangeInput value={24} onChange={() => {}} />
+        <RangeInput
+          value={rangeInput}
+          onChange={event => this.setState({ rangeInput: event.target.value })}
+        />
         <Stack>
           <Box direction="row" justify="between">
             {[0, 1, 2, 3].map(value => (
